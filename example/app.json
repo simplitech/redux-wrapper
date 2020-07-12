@@ -1,0 +1,22 @@
+{
+  "name": "@simpli/redux-wrapper-example",
+  "displayName": "ReduxWrapper Example",
+  "expo": {
+    "name": "@simpli/redux-wrapper-example",
+    "slug": "simpli-redux-wrapper-example",
+    "description": "Example app for @simpli/redux-wrapper",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
