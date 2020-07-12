@@ -23,6 +23,7 @@
     "test": "jest",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "lint:fix": "yarn lint --fix",
     "prepare": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
@@ -31,16 +32,17 @@
   },
   "keywords": [
     "react-native",
+    "redux",
     "ios",
     "android"
   ],
-  "repository": "https://github.com/ftgibran/simpli-redux-wrapper",
+  "repository": "https://github.com/simplitech/redux-wrapper",
   "author": "Felipe Gibran Eleuterio Toledo <ft.gibran@gmail.com> (https://github.com/ftgibran)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ftgibran/simpli-redux-wrapper/issues"
+    "url": "https://github.com/simplitech/redux-wrapper/issues"
   },
-  "homepage": "https://github.com/ftgibran/simpli-redux-wrapper#readme",
+  "homepage": "https://github.com/simplitech/redux-wrapper#readme",
   "devDependencies": {
     "@commitlint/config-conventional": "^8.3.4",
     "@react-native-community/bob": "^0.16.2",
@@ -59,12 +61,14 @@
     "prettier": "^2.0.5",
     "react": "16.11.0",
     "react-native": "0.62.2",
+    "redux": "^4.0.5",
     "release-it": "^13.5.8",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "redux": "*"
   },
   "jest": {
     "preset": "react-native",
@@ -87,7 +91,8 @@
   "release-it": {
     "git": {
       "commitMessage": "chore: release ${version}",
-      "tagName": "v${version}"
+      "tagName": "v${version}",
+      "requireUpstream": false
     },
     "npm": {
       "publish": true
@@ -111,9 +116,11 @@
         "error",
         {
           "quoteProps": "consistent",
+          "semi": false,
           "singleQuote": true,
           "tabWidth": 2,
           "trailingComma": "es5",
+          "bracketSpacing": false,
           "useTabs": false
         }
       ]

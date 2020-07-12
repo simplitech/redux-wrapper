@@ -1,5 +1,5 @@
-export default {
-  multiply(a: number, b: number) {
-    return Promise.resolve(a * b);
-  },
-};
+import {DispatcherWrapper} from './DispatcherWrapper'
+import {ReducerWrapper} from './ReducerWrapper'
+
+export {ReducerApplied} from './types'
+export {DispatcherWrapper, ReducerWrapper}

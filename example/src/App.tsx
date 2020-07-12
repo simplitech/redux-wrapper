@@ -1,25 +1,17 @@
-import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import ReduxWrapper from '@simpli/redux-wrapper';
+import * as React from 'react'
+import type {Store} from 'redux'
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
+import type {RootState} from './store/RootStore'
+import {RootStore} from './store/RootStore'
+import Home from './Home'
+
+const store: Store<RootState> = createStore(RootStore.reducers)
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    ReduxWrapper.multiply(3, 7).then(setResult);
-  }, []);
-
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+    <Provider store={store}>
+      <Home />
+    </Provider>
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
